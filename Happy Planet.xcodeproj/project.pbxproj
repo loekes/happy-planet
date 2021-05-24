@@ -30,7 +30,8 @@
 		9D8BFEC02455C23C00EEAD5A /* ChooseNewBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8BFEBF2455C23C00EEAD5A /* ChooseNewBodyView.swift */; };
 		9D8BFEC52455CA3000EEAD5A /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8BFEC42455CA3000EEAD5A /* UserSettings.swift */; };
 		BB945757265823B1009940DA /* PlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB945756265823B1009940DA /* PlanetView.swift */; };
-		BBEF7945265BF4DD00F90563 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BBEF7944265BF4DD00F90563 /* Alamofire */; };
+		BBEF7945265BF4DD00F90563 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = BBEF7944265BF4DD00F90563 /* SwiftPackageProductDependency */; };
+		BBEF794E265BF6E800F90563 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF7947265BF65000F90563 /* WeatherModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		9D8BFEBF2455C23C00EEAD5A /* ChooseNewBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseNewBodyView.swift; sourceTree = "<group>"; };
 		9D8BFEC42455CA3000EEAD5A /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		BB945756265823B1009940DA /* PlanetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetView.swift; sourceTree = "<group>"; };
+		BBEF7947265BF65000F90563 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBEF7945265BF4DD00F90563 /* Alamofire in Frameworks */,
+				BBEF7945265BF4DD00F90563 /* BuildFile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +163,7 @@
 		9D669B8D2454E5610043F191 /* Happy Planet WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				BBEF7946265BF64200F90563 /* View Model */,
 				9D8BFEC12455C9F600EEAD5A /* Persistence */,
 				9D8BFEBE2455C22E00EEAD5A /* Views */,
 				9D8BFEBB2455BF2300EEAD5A /* Components */,
@@ -232,6 +235,14 @@
 			path = Persistence;
 			sourceTree = "<group>";
 		};
+		BBEF7946265BF64200F90563 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				BBEF7947265BF65000F90563 /* WeatherModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -239,7 +250,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D669BAB2454E5620043F191 /* Build configuration list for PBXNativeTarget "Happy Planet" */;
 			buildPhases = (
-				DD95055D45A6D54D5DF98126 /* [CP] Check Pods Manifest.lock */,
 				9D669B742454E55E0043F191 /* Resources */,
 				9D669BAA2454E5620043F191 /* Embed Watch Content */,
 				A526C12C4DA7D9133C28B3A9 /* Frameworks */,
@@ -251,7 +261,7 @@
 			);
 			name = "Happy Planet";
 			packageProductDependencies = (
-				BBEF7944265BF4DD00F90563 /* Alamofire */,
+				BBEF7944265BF4DD00F90563 /* SwiftPackageProductDependency */,
 			);
 			productName = "Happy Planet";
 			productReference = 9D669B762454E55E0043F191 /* Happy Planet.app */;
@@ -261,7 +271,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D669BA72454E5620043F191 /* Build configuration list for PBXNativeTarget "Happy Planet WatchKit App" */;
 			buildPhases = (
-				F537FBFD7A3BC7FE66FB0DF3 /* [CP] Check Pods Manifest.lock */,
 				9D669B782454E55E0043F191 /* Resources */,
 				9D669BA62454E5620043F191 /* Embed App Extensions */,
 				3DECD8741A8F5FA661CDE131 /* Frameworks */,
@@ -280,11 +289,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D669BA32454E5620043F191 /* Build configuration list for PBXNativeTarget "Happy Planet WatchKit Extension" */;
 			buildPhases = (
-				0EF2952DC40D99FD600BAFCE /* [CP] Check Pods Manifest.lock */,
 				9D669B852454E5610043F191 /* Sources */,
 				9D669B862454E5610043F191 /* Frameworks */,
 				9D669B872454E5610043F191 /* Resources */,
-				A11CDE6E2E810C384DAA206C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -326,7 +333,7 @@
 			);
 			mainGroup = 9D669B6F2454E55E0043F191;
 			packageReferences = (
-				BBEF7943265BF4DD00F90563 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				BBEF7943265BF4DD00F90563 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = 9D669B772454E55E0043F191 /* Products */;
 			projectDirPath = "";
@@ -370,92 +377,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		0EF2952DC40D99FD600BAFCE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Happy Planet WatchKit Extension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A11CDE6E2E810C384DAA206C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Happy Planet WatchKit Extension/Pods-Happy Planet WatchKit Extension-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Happy Planet WatchKit Extension/Pods-Happy Planet WatchKit Extension-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Happy Planet WatchKit Extension/Pods-Happy Planet WatchKit Extension-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DD95055D45A6D54D5DF98126 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Happy Planet-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F537FBFD7A3BC7FE66FB0DF3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Happy Planet WatchKit App-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		9D669B852454E5610043F191 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -465,6 +386,7 @@
 				9D669B8F2454E5610043F191 /* ContentView.swift in Sources */,
 				9D669B952454E5610043F191 /* NotificationController.swift in Sources */,
 				9D8BFEC52455CA3000EEAD5A /* UserSettings.swift in Sources */,
+				BBEF794E265BF6E800F90563 /* WeatherModel.swift in Sources */,
 				BB945757265823B1009940DA /* PlanetView.swift in Sources */,
 				9D1F95AC24574B95001067B3 /* ConditionListItem.swift in Sources */,
 				9D669B932454E5610043F191 /* ExtensionDelegate.swift in Sources */,
@@ -775,7 +697,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BBEF7943265BF4DD00F90563 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		BBEF7943265BF4DD00F90563 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -786,9 +708,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BBEF7944265BF4DD00F90563 /* Alamofire */ = {
+		BBEF7944265BF4DD00F90563 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BBEF7943265BF4DD00F90563 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = BBEF7943265BF4DD00F90563 /* RemoteSwiftPackageReference */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -12,16 +12,25 @@ struct PlanetView: View {
     let conditionState: ConditionState
     @State var bodyToShow: SpaceBody
     
+    @State private var isShowingOverviewView = false
+    @State private var isShowingPlanetChangerView = false
+    
     var body: some View {
+        let tapOrLongPress = TapGesture(count: 1).onEnded{_ in self.isShowingOverviewView = true
+        }.exclusively(before: LongPressGesture(minimumDuration: 1).onEnded{finished in self.isShowingPlanetChangerView = finished
+        })
+        
         ZStack(alignment: .bottom){
             ZStack{
                 Image("Sky")
                    .resizable()
                    .aspectRatio(contentMode:.fill)
-                NavigationLink(destination: ChooseNewBodyView()){
+                /*NavigationLink(destination: ChooseNewBodyView()){*/
+                Button(action: {}, label: {
                     Image("\(conditionState.rawValue)\(bodyToShow.rawValue)")
                         .renderingMode(.original)
-                }
+                        .gesture(tapOrLongPress)
+                })
                 .buttonStyle(PlainButtonStyle())
             }
            
@@ -42,7 +51,16 @@ struct PlanetView: View {
         .onAppear(perform: {
             self.$bodyToShow.wrappedValue = SpaceBody(rawValue: defaults.string(forKey: "Body") ?? "Moon") ?? .Moon
         })
-
+        
+        NavigationLink(
+            destination: OverviewView(bodyToShow: bodyToShow),
+            isActive: $isShowingOverviewView
+        ){}.frame(maxHeight: 0).hidden()
+        
+        NavigationLink(
+            destination: ChooseNewBodyView(),
+            isActive: $isShowingPlanetChangerView
+        ){}.frame(maxHeight: 0).hidden()
     }
 }
 
