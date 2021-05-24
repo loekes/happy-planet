@@ -18,6 +18,7 @@ enum SpaceBody: String, CaseIterable{
     case Moon = "Moon"
     case Mars = "Mars"
     case Jupiter = "Jupiter"
+    case Neptune = "Neptune"
 }
 
 extension SpaceBody: Identifiable {

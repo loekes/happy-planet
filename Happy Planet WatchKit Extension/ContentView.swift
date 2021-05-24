@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let conditionState: ConditionState = .Sad
+    let conditionState: ConditionState = .Happy
     @State var bodyToShow: SpaceBody = SpaceBody(rawValue: defaults.string(forKey: "Body") ?? "Moon") ?? .Moon
     
     @ViewBuilder
